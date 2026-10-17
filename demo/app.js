@@ -34,7 +34,7 @@
     const visible = replay().points.filter(p => p.second <= state.second), width=600,height=125;
     const path=visible.map((p,i)=>`${i?'L':'M'}${(p.second/900*width).toFixed(1)},${(height-15-(p.bpm-40)/80*(height-25)).toFixed(1)}`).join(' ');
     const last=visible.at(-1),x=last ? last.second/900*width : 0,y=last ? height-15-(last.bpm-40)/80*(height-25) : 0;
-    return `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20H600M0 65H600M0 110H600" stroke="#e6ecdf" stroke-width="1" stroke-dasharray="3 5"/><path d="${path}" fill="none" stroke="#71984c" stroke-width="2" vector-effect="non-scaling-stroke"/><circle cx="${x}" cy="${y}" r="3" fill="#486c35"/><text x="8" y="15" fill="#a0ad94" font-size="8">120</text><text x="8" y="122" fill="#a0ad94" font-size="8">40</text></svg>`;
+    return `<svg viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20H600M0 65H600M0 110H600" stroke="#ece6df" stroke-width="1" stroke-dasharray="3 5"/><path d="${path}" fill="none" stroke="#817163" stroke-width="2" vector-effect="non-scaling-stroke"/><circle cx="${x}" cy="${y}" r="3" fill="#5b4f46"/><text x="8" y="15" fill="#ad9f94" font-size="8">120</text><text x="8" y="122" fill="#ad9f94" font-size="8">40</text></svg>`;
   }
   function renderProfiles() {
     const current=replay(),profiles=current.profiles.filter(p=>p.createdAt<=current.start+state.second);
